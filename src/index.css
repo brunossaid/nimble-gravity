@@ -1,68 +1,107 @@
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+  font-family: system-ui, Arial, sans-serif;
+  color: #fff;
+  background-color: #121212;
 }
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  padding: 24px;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.candidate-info {
+  margin-bottom: 24px;
+}
+
+.candidate-name {
+  margin: 0;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.candidate-email {
+  margin: 4px 0 0;
+  opacity: 0.7;
+  font-size: 16px;
+}
+
+.jobs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 800px) {
+  .jobs-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.job-card {
+  border: 1px solid #2a2a2a;
+  padding: 16px;
+  border-radius: 8px;
+  background: #171717;
+}
+
+.job-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 12px;
+}
+
+.job-label {
+  font-size: 13px;
+  display: block;
+  color: #dddddd;
+}
+
+.job-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.job-input {
+  flex: 1;
+  height: 40px;
+  padding: 0 10px;
+  border-radius: 6px;
+  border: 1px solid #2a2a2a;
+  background: #121212;
+  color: #fff;
+  box-sizing: border-box;
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
+  height: 40px;
+  padding: 0 16px;
+  border-radius: 6px;
+  border: 1px solid #2a2a2a;
+  background: #1f1f1f;
+  font-size: 14px;
+  font-weight: 600;
   font-family: inherit;
-  background-color: #1a1a1a;
+  color: #fff;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+button:hover {
+  background: #2a2a2a;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: #1a1a1a;
+}
+
+.error-message {
+  color: #ff4d4f;
+  margin-top: 8px;
+}
+
+.success-message {
+  color: #4caf50;
+  margin-top: 8px;
 }
